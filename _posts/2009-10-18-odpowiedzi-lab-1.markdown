@@ -1,0 +1,20 @@
+---
+layout: post
+title: Odpowiedzi laboratorium 1
+---
+
+# {{ page.title }}
+
+## Zadanie 1
+<pre>
+[mskorb@sigma temp]$ cal -m
+  październik 2009
+po wt śr cz pi so ni
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+</pre>
+
+## Zadanie 2
