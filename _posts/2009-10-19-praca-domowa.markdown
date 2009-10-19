@@ -17,4 +17,8 @@ title: Praca domowa
 
 ## Praca domowa
 
+
+cat program.c | grep '\bmain\b'
+
+
 Kalendarz obok siebie na dwa miesiace.
