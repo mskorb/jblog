@@ -184,21 +184,24 @@ po wt śr cz pi so ni
 
 Wyświetl kalendarz na wrzesień, październik i listopad 2009 r.
  z miesiącami obok siebie (cal).
+
 <pre>
+
 [mskorb@sigma temp]$ cal -3m
     wrzesień 2009       październik 2009        listopad 2009
-po wt śr cz pi so ni  po wt śr cz pi so ni  po wt śr cz pi so ni
+po wt śr cz pi so ni  	po wt śr cz pi so ni  	po wt śr cz pi so ni
     1  2  3  4  5  6            1  2  3  4                     1
- 7  8  9 10 11 12 13   5  6  7  8  9 10 11   2  3  4  5  6  7  8
-14 15 16 17 18 19 20  12 13 14 15 16 17 18   9 10 11 12 13 14 15
-21 22 23 24 25 26 27  19 20 21 22 23 24 25  16 17 18 19 20 21 22
-28 29 30              26 27 28 29 30 31     23 24 25 26 27 28 29
-                                            30
+ 7  8  9 10 11 12 13   	5  6  7  8  9 10 11  	 2  3  4  5  6  7  8
+14 15 16 17 18 19 20  	12 13 14 15 16 17 18  	 9 10 11 12 13 14 15
+21 22 23 24 25 26 27  	19 20 21 22 23 24 25  	16 17 18 19 20 21 22
+28 29 30              	26 27 28 29 30 31     	23 24 25 26 27 28 29
+                                            	30
 </pre>
 
 Wyświetl kalendarz na październik, listopad i grudzień 2009 r.
 
 <pre>
+
 [mskorb@sigma temp]$ cal 11 2009 -3m
   październik 2009        listopad 2009         grudzień 2009
 po wt śr cz pi so ni  po wt śr cz pi so ni  po wt śr cz pi so ni
