@@ -1,0 +1,90 @@
+SPLIT(1)                  Narzędzia tekstowe GNU 2.0                  SPLIT(1)
+
+
+
+NNAAZZWWAA
+       split − rozdziel plik na kawałki
+
+SSKKŁAADDNNIIAA
+       sspplliitt  [−−_l_i_n_i_e] [−−ll _l_i_n_i_e] [−−−−lliinneess==_l_i_n_i_e]
+              [−−bb _b_a_j_t_y[bbkkmm]] [−−−−bbyytteess==_b_a_j_t_y[bbkkmm]]
+              [−−CC _b_a_j_t_y[bbkkmm]] [−−−−lliinnee--bbyytteess==_b_a_j_t_y[bbkkmm]]
+              [−−−−vveerrbboossee] [−−−−hheellpp] [−−−−vveerrssiioonn]
+              [_p_l_i_k_w_e_j [_p_l_i_k_w_y_j_-_p_r_e_f_i_k_s]]
+
+OOPPIISS
+       Dokumentacja  niniejsza nie jest już utrzymywana i może być niedokładna
+       lub niekompletna.  Autorytatywnym  źródłem  jest  obecnie  dokumentacja
+       Texinfo.  Dostęp do niej uzyskasz wpisując w wierszu poleceń:
+              ppiinnffoo sspplliitt
+       lub
+              iinnffoo sspplliitt.
+
+       Ta strona podręcznika opisuje polecenie sspplliitt w wersji GNU.
+
+       sspplliitt  tworzy  jeden  lub więcej plików wynikowych (tyle ile potrzeba),
+       zawierających kolejne sekcje z _p_l_i_k_w_e_j, lub  ze  standardowego  wejścia
+       jeśli  nie  podano  żadnego  lub  podano nazwę ’−’.  Domyślnie sspplliitt do
+       każdego pliku wynikowego wstawia 1000 linii, albo to co pozostało jeśli
+       jest odeń mniejszy.
+
+       Nazwy plików wynikowych składają się z przedrostka, po którym następuje
+       grupa liter, wybrana tak, iż połączenie plików wynikowych posortowanych
+       wedle  nazwy  daje  oryginalny  plik wejściowy, w odpowiednim porządku.
+       Domyślny przedrostek nazwy pliku wynikowego to ’x’. Jeśli podano  argu-
+       ment  _p_l_i_k_w_y_j_-_p_r_e_f_i_k_s, jest on używany zamiennie jako przedrostek nazwy
+       pliku wyjściowego.
+
+   OOPPCCJJEE
+       −−_l_i_n_i_e, −−ll _l_i_n_i_e, −−−−lliinneess==_l_i_n_i_e
+              Wstawia  _l_i_n_i_e  linii  pliku  wejściowego   do   każdego   pliku
+              wyjściowego.
+
+       −−bb _b_a_j_t_y[bbkkmm], −−−−bbyytteess==_b_a_j_t_y[bbkkmm]
+              Wstaw   _b_a_j_t_y   bajtów   pliku   wejściowego  do  każdego  pliku
+              wyjściowego.  _b_a_j_t_y to niezerowa liczba całkowita, plus  opcjon-
+              alnie jeden z poniższych znaków określających inną jednostkę:
+
+              bb      bloki 512-bajtowe.
+
+              kk      bloki kilobajtowe.
+
+              mm      bloki megabajtowe.
+
+       −−CC _b_a_j_t_y[bbkkmm], −−−−lliinnee--bbyytteess==_b_a_j_t_y[bbkkmm]
+              Wstawia do każdego pliku wynikowego tyle kompletnych linii pliku
+              wejściowego ile jest możliwe  bez  przekraczania  _b_a_j_t_y  bajtów.
+              Jeśli  istnieje  linia  dłuższa,  wstawia z niej wskazaną liczbę
+              bajtów do każdego pliku wynikowego aż pozostanie mniej niż _b_a_j_t_y
+              bajtów  linii,  potem  kontynuuje  normalnie.  _b_a_j_t_y ma taki sam
+              format jak w opcji −−−−bbyytteess.
+
+       ----vveerrbboossee
+              Wyświetla komunikat na standardowym wyjściu diagnostycznym przed
+              otwarciem każdego z plików wynikowych.
+
+       −−−−hheellpp Wyświetla informację o stosowaniu programu i dostępnych opcjach,
+              kończy pracę.
+
+       −−−−vveerrssiioonn
+              Wyświetla numer wersji programu i kończy pracę.
+
+ZZGGŁAASSZZAANNIIEE BBŁĘDDÓÓWW
+       Błędy proszę zgłaszać, w jęz. ang., do <bug-textutils@gnu.org>.
+
+CCOOPPYYRRIIGGHHTT
+       Copyright © 1999 Free Software Foundation, Inc.
+       This is free software; see the source for copying conditions.  There is
+       NO  warranty;  not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR
+       PURPOSE.
+
+ZZOOBBAACCZZ TTAAKKŻEE
+       hheeaadd(1), ttaaiill(1), ccsspplliitt(1), tteexxttuuttiillss(1).
+
+OODD TTŁUUMMAACCZZAA
+       Zaktualizowano i poszerzono wg dokumentacji Texinfo dla  narzędzi  tek-
+       stowych GNU wersji 2.0.
+
+
+
+sierpień 1999                         FSF                             SPLIT(1)

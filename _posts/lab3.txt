@@ -1,0 +1,61 @@
+Napisać polecenie zliczające ilość znaków z pierwszych 
+trzech linii pliku /etc/passwd.1.
+
+man split
+
+man pg
+
+pg -5 /etc/passwd
+
+
+2.cat > tekst1.txt
+al
+ol
+
+cat > teskt.2.txt
+bla v
+bla
+
+cat text1.txt > text3.txt
+cat >> text3.txt
+ala ma konta
+
+cat text2.txt >> text3.txt
+
+
+cat text3.txt
+
+// sprobowac czy da sie to zrobic za pomoca jednego 
+polecenia.
+
+3.
+ls
+head -qn 5 xaa xab
+head -qn 5 *
+//wariant skrótowy
+head --quiet --lines 5 xaa krotki
+// wariant rozwiniety
+
+4. 
+nl /etc/passwd > passwd 
+ls passwd
+
+
+
+head -n 5 passwd  | tail -n 3
+
+//czy mozna dac odpowiedzi 2 razy za pomoca tail'a
+
+//--lines
+// 
+
+5. 
+
+
+//head -n 5
+//head --lines 5
+//zmniejszyc okno terminala do 5 wierszy
+inscapq
+
+
+
