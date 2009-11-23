@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl-pl">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Odpowiedzi laboratorium 2</title>
+   <meta name="author" content="Mateusz Skorb" />
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/atom.xml" rel="alternate" 
+         title="Włodek Bzyl" type="application/atom+xml" />
+
+   <link rel="stylesheet" href="../../../../css/syntax.css" type="text/css" />
+   <link rel="stylesheet" href="../../../../css/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="../../../../css/blog.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+
+<div class="site span-21"><!--  showgrid -->
+
+  <div class="title span-21">
+    <img class="prepend-1" src="../../../../images/logo.png" alt="[logo]" />
+    <a class="append-7" href="/~mskorb/sp/">home</a>
+  </div>
+  
+  <div id="post" class="prepend-1 span-13">
+<h1>Odpowiedzi laboratorium 2</h1>
+
+<p>W katalogu c utwórz plik program.c zawierający co najmniej 10 linii kodu napisanego w języku C. (Sam kod należy wyszukać i pobrać z sieci.)</p>
+
+<pre>
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ cd c
+[mskorb@sigma c]$ nano program.c
+[mskorb@sigma c]$ ls
+program.c
+</pre>
+
+
+<h2>Zadanie 1</h2>
+
+<p>Wyświetl na ekran 2 pierwsze wiersze pliku program.c. (head)</p>
+
+<pre>
+[mskorb@sigma c]$ cat program.c | grep . -m 2
+\#include<stdio.h>
+main()
+</pre>
+
+
+<h2>Zadanie 2</h2>
+
+<p>Wyświetl na ekran 4 ostatnie wiersze pliku program.c. (head, tail)</p>
+
+<pre>
+[mskorb@sigma c]$ tail program.c -n -4
+        printf("\n");
+        i=i+1;
+        }
+}
+
+</pre>
+
+
+<h2>Zadanie 3</h2>
+
+<p>Wyświetl na ekran całą zawartość pliku program.c.</p>
+
+<pre>
+[mskorb@sigma c]$ cat program.c
+\#include<stdio.h>
+main()
+{
+int j=0;
+int i=0;
+int t;
+
+while(i<10)
+        {
+        while(j<10)
+                {
+                t=i*j;
+                printf("%2i " ,t);
+                j=j+1;
+                }
+        j=0;
+        printf("\n");
+        i=i+1;
+        }
+</pre>
+
+
+<h2>Zadanie 4</h2>
+
+<p>W pliku program.c znajdź wszystkie wiersze z wystąpieniem słowa „main”. (grep)</p>
+
+<pre>
+
+[mskorb@sigma c]$ cat program.c | grep '\bmain\b'
+main()
+
+</pre>
+
+
+<h2>Zadanie 5</h2>
+
+<p>Plikowi program.c nadaj następujące uprawnienia: właściciel – czytanie, pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (chmod)</p>
+
+<pre>
+
+[mskorb@sigma c]$ chmod u+rw program.c
+[mskorb@sigma c]$ chmod g+r program.c
+[mskorb@sigma c]$ chmod o-rwx program.c
+
+</pre>
+
+
+<h2>Zadanie 6</h2>
+
+<p>Będąc w katalogu temp przenieś katalog wazne-sprawy do katalogu praca.</p>
+
+<pre>
+[mskorb@sigma temp]$ mv dom/wazne-sprawy/ praca/
+</pre>
+
+
+<h2>Zadanie 7</h2>
+
+<p>Zarchiwizuj cały katalog temp. (zip i tar)</p>
+
+<pre>
+[mskorb@sigma ~]$ zip -r temp.zip temp
+updating: temp/ (stored 0%)
+  adding: temp/praca/ (stored 0%)
+  adding: temp/praca/dokumenty/ (stored 0%)
+  adding: temp/praca/dokumenty/xab (stored 0%)
+  adding: temp/praca/dokumenty/xaa (stored 0%)
+  adding: temp/praca/dokumenty/xac (stored 0%)
+  adding: temp/praca/zlecenia/ (stored 0%)
+  adding: temp/praca/zlecenia/niezrealizowane/ (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/ (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/xab (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/wykonano.txt (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/xaa (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/xac (stored 0%)
+  adding: temp/praca/wazne-sprawy/ (stored 0%)
+  adding: temp/praca/wazne-sprawy/odtworzono.txt (stored 0%)
+  adding: temp/nauka/ (stored 0%)
+  adding: temp/nauka/logo/ (stored 0%)
+  adding: temp/nauka/c/ (stored 0%)
+  adding: temp/nauka/c/program.c (deflated 25%)
+  adding: temp/nauka/pascal/ (stored 0%)
+  adding: temp/dom/ (stored 0%)
+  adding: temp/dom/rachunki.txt (stored 0%)
+  
+
+[mskorb@sigma ~]$ tar -cf temp.tar temp
+</pre>
+
+
+<h2>Zadanie 8</h2>
+
+<p>Usuń katalog temp.</p>
+
+<pre>
+[mskorb@sigma ~]$ rm -r temp
+</pre>
+
+
+<h2>Zadanie 9</h2>
+
+<p>Odtwórz z archiwum katalog temp. (unzip i tar)</p>
+
+<pre>
+[mskorb@sigma ~]$ unzip temp.zip
+Archive:  temp.zip
+   creating: temp/
+   creating: temp/praca/
+   creating: temp/praca/dokumenty/
+ extracting: temp/praca/dokumenty/xab
+ extracting: temp/praca/dokumenty/xaa
+ extracting: temp/praca/dokumenty/xac
+   creating: temp/praca/zlecenia/
+   creating: temp/praca/zlecenia/niezrealizowane/
+   creating: temp/praca/zlecenia/zrealizowane/
+ extracting: temp/praca/zlecenia/zrealizowane/xab
+ extracting: temp/praca/zlecenia/zrealizowane/wykonano.txt
+ extracting: temp/praca/zlecenia/zrealizowane/xaa
+ extracting: temp/praca/zlecenia/zrealizowane/xac
+   creating: temp/praca/wazne-sprawy/
+ extracting: temp/praca/wazne-sprawy/odtworzono.txt
+   creating: temp/nauka/
+   creating: temp/nauka/logo/
+   creating: temp/nauka/c/
+  inflating: temp/nauka/c/program.c
+   creating: temp/nauka/pascal/
+   creating: temp/dom/
+ extracting: temp/dom/rachunki.txt
+
+
+[mskorb@sigma ~]$ rm -r  temp
+[mskorb@sigma ~]$ tar xvf temp.tar
+temp/
+temp/praca/
+temp/praca/dokumenty/
+temp/praca/dokumenty/xab
+temp/praca/dokumenty/xaa
+temp/praca/dokumenty/xac
+temp/praca/zlecenia/
+temp/praca/zlecenia/niezrealizowane/
+temp/praca/zlecenia/zrealizowane/
+temp/praca/zlecenia/zrealizowane/xab
+temp/praca/zlecenia/zrealizowane/wykonano.txt
+temp/praca/zlecenia/zrealizowane/xaa
+temp/praca/zlecenia/zrealizowane/xac
+temp/praca/wazne-sprawy/
+temp/praca/wazne-sprawy/odtworzono.txt
+temp/nauka/
+temp/nauka/logo/
+temp/nauka/c/
+temp/nauka/c/program.c
+temp/nauka/pascal/
+temp/dom/
+temp/dom/rachunki.txt
+</pre>
+
+
+<h2>Zadanie 10</h2>
+
+<p>Posprzątaj na swoim koncie.</p>
+
+<pre>
+[mskorb@sigma ~]$ rm -r temp.zip
+[mskorb@sigma ~]$ rm -r temp.tar
+</pre>
+
+
+</div>
+
+
+</div>
+
+</body>
+</html>

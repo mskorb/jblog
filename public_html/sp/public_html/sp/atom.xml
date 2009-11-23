@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Mateusz Skorb</title>
+ <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/atom.xml" rel="self"/>
+ <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/"/>
+ <updated>2009-11-23T11:12:41+01:00</updated>
+ <id>http://sigma.inf.ug.edu.pl/~mskorb/</id>
+ <author>
+   <name>Mateusz Skorb</name>
+   <email>mskorb@inf.ug.edu.pl</email>
+ </author>
+
+ 
+ <entry>
+   <title>Odpowiedzi laboratorium 5</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/11/16/odpowiedzi-lab5/"/>
+   <updated>2009-11-16T00:00:00+01:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/11/16/odpowiedzi-lab5</id>
+   <content type="html">&lt;h1&gt;Odpowiedzi laboratorium 5&lt;/h1&gt;
+
+&lt;h2&gt;Zadanie 1&lt;/h2&gt;
+
+&lt;p&gt;Znajdź w swoim katalogu domowym (bez podkatalogów) wszystkie pliki, które zostały zmodyfikowane w ciągu ostatnich dziesięciu dni i wyświetl ich nazwy.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost]$ find ~/ -mtime -10 -maxdepth 1
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 2&lt;/h2&gt;
+
+&lt;p&gt;Znajdź wszystkie pliki zwykłe w systemie, które mają w nazwie ciąg znaków „conf” i wyświetl ich nazwy na ekranie.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost]$ find /-type f -name \*conf\*
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 3&lt;/h2&gt;
+
+&lt;p&gt;Znajdź w swoim katalogu domowym wszystkie pliki, które nie były używane w ciągu ostatnich 20 dni.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost]$ find ~/ -mtime -20 -type f
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 4&lt;/h2&gt;
+
+&lt;p&gt;Znajdź w katalogu /etc wszystkie niepuste podkatalogi i pliki o nazwach zaczynających się na literę „a”.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost]$ find /etc 
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 5&lt;/h2&gt;
+
+&lt;p&gt;Z bieżącego katalogu usuń pliki, których nazwa zaczyna się na literę „x” i zawiera dokładnie trzy znaki&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost temp]$ touch xa1 xa2 xa3
+[mskorb@localhost temp]$ touch xaa2 xaa3 xaa4
+[mskorb@localhost temp]$ ls
+xa1  xa2  xa3  xaa2  xaa3  xaa4
+&lt;strong&gt;[mskorb@localhost temp]$ rm x??&lt;/strong&gt;
+[mskorb@localhost temp]$ ls
+xaa2  xaa3  xaa4
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 6&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@localhost sp]$ mkdir `date +%Y-%m-%d`
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie dodatkowe&lt;/h2&gt;
+
+&lt;p&gt;Eksportowanie manuala:
+ - Metoda podana na zajeciach:&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost temp]  man find -t 
+&lt;/pre&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Odpowiedzi laboratorium 4</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/11/09/odpowiedzi-lab4/"/>
+   <updated>2009-11-09T00:00:00+01:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/11/09/odpowiedzi-lab4</id>
+   <content type="html">&lt;h1&gt;Odpowiedzi laboratorium 4&lt;/h1&gt;
+
+&lt;h2&gt;Zadanie 1&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie małe litery na duże.&lt;/p&gt;
+
+&lt;pre&gt;
+Dla poczatkujacych:
+
+[mskorb@localhost sp]$ ls
+tekst1.txt  tekst2.txt  tekst3.txt
+[mskorb@localhost sp]$ ls | tr a-z A-Z
+TEKST1.TXT
+TEKST2.TXT
+TEKST3.TXT
+
+[mskorb@localhost sp]$ ls | tr a-zą A-ZĄ
+
+&lt;/pre&gt;
+
+
+
+
+&lt;pre&gt;
+Drugie rozwiazanie:
+
+[mskorb@localhost sp]$ ls | tr '[:lower:]' '[:upper:]' 
+TEKST1.TXT
+TEKST2.TXT
+TEKST3.TXT
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 2&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich rozmiar i nazwę.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost sp]$ ls -l | cut -b 1-10,28-33,48-
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 3&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl listę plików w aktualnym katalogu, posortowaną według rozmiaru pliku.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost sp]$ ls --sort=size -l
+razem 8
+-rw-r--r-- 1 mskorb studinf 19 10-29 18:28 tekst3.txt
+-rw-r--r-- 1 mskorb studinf  3 10-29 18:26 tekst2.txt
+-rw-r--r-- 1 mskorb studinf  0 10-29 18:25 tekst1.txt
+
+Wariant skrótowy:
+[mskorb@localhost sp]$ ls -s -l
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 4&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl zawartość pliku /etc/passwd posortowaną według numerów UID w kolejności od największego do najmniejszego.
+ &lt;pre&gt;
+[mskorb@localhost]$ cat /etc/passwd/ | sort --reverse --general-numeric-sort --key 3
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h2&gt;Zadanie 5&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl zawartość pliku /etc/passwd posortowaną najpierw według numerów GID w kolejności od największego do najmniejszego, a następnie UID.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@localhost]$ cat /etc/passwd/ | sort --general-numeric-sort --key 4,3 --reverse
+ &lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 6&lt;/h2&gt;
+
+&lt;p&gt;Podaj liczbę plików każdego użytkownika.&lt;/p&gt;
+
+&lt;pre&gt;
+Na sigmie: brak uprawnien
+prosta wersja: domowa
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 7&lt;/h2&gt;
+
+&lt;p&gt;Sporządź statystykę praw dostępu (dla każdego z praw dostępu podaj ile razy zostało ono przydzielone).
+ls -l
+ile jest r ile w ile x&lt;/p&gt;
+
+&lt;p&gt; &lt;pre&gt;
+[mskorb@localhost$ find -printf &quot;%m\n&quot; | sort | uniq -c
+ &lt;/pre&gt;&lt;/p&gt;
+
+&lt;h2&gt;Zadanie 8&lt;/h2&gt;
+
+&lt;p&gt;Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych poleceń?&lt;/p&gt;
+
+&lt;pre&gt;
+ls -l &gt; lsout.txt                          #  1
+&lt;/pre&gt;
+
+
+&lt;p&gt;Zapisanie do pliku  lsout.txt szczególowej listy plików z aktualnego katalogu.&lt;/p&gt;
+
+&lt;pre&gt;
+ls -la &gt;&gt; lsout.txt                        #  2
+&lt;/pre&gt;
+
+
+&lt;p&gt;Dopisanie do pliku  lsout.txt szczególowej listy plików, lacznie z plikami zaczynajacymi sie od &quot;.&quot; (ukrytymi) z aktualnego katalogu.&lt;/p&gt;
+
+&lt;pre&gt;
+ps &gt;&gt; psout.txt                            #  3
+&lt;/pre&gt;
+
+
+&lt;p&gt;Dopisuje do pliku psout.txt opis biezacych procesow.&lt;/p&gt;
+
+&lt;pre&gt;
+free -m &gt;&gt; ~/wynik                         #  4
+&lt;/pre&gt;
+
+
+&lt;p&gt;Dopisanie do pliku znajdującego się w lokalizacji &quot;~/wynik&quot; informacji o wolnej i wykorzystanej pamieci podanej w megabajtach.&lt;/p&gt;
+
+&lt;pre&gt;
+kill -1 1234 &gt; killout.txt 2&gt;killerr.txt   #  5
+&lt;/pre&gt;
+
+
+&lt;p&gt; Zakonczenie procesu o id 1234 oraz przakazanie komunikatow informacyjnych do pliku killout.txt, natomiast bledy zapisz do pliku killerr.txt&lt;/p&gt;
+
+&lt;pre&gt;
+kill -1 1234 &gt; killout.txt 2&gt;&amp;1            #  6
+&lt;/pre&gt;
+
+
+&lt;p&gt;Zakonczenie procesu o id 1234 komunikaty informacyjne zapisz do pliku &quot;killout.txt&quot; a bledy wypisz na ekran.&lt;/p&gt;
+
+&lt;pre&gt;
+kill -1 1234 &gt; /dev/null 2&gt;&amp;1              #  7
+&lt;/pre&gt;
+
+
+&lt;p&gt;Zakonczenie procesu o id 1234 komunikaty informacyjne zapisz w lokalizacji &quot;/dev/null&quot; a bledy wypisz na ekran.&lt;/p&gt;
+
+&lt;pre&gt;
+sort psout.txt &gt; pssort.txt                #  8
+&lt;/pre&gt;
+
+
+&lt;p&gt;Sortowanie procesow w pliku psout.txt i zapisanie wyniku w pliku pssort.txt&lt;/p&gt;
+
+&lt;pre&gt;
+ps | sort &gt; pssort.txt                     #  9
+&lt;/pre&gt;
+
+
+&lt;p&gt;  Sortowanie procesow i zapisanie do pliku pssort.txt&lt;/p&gt;
+
+&lt;pre&gt;
+cat lsout.txt | sort &gt; lssort.txt          # 10
+&lt;/pre&gt;
+
+
+&lt;p&gt;Wypisanie pliku lsout.txt posortowanie i zapisanie do pliku lssort.txt&lt;/p&gt;
+
+&lt;pre&gt;
+who | sort | more                          # 11
+&lt;/pre&gt;
+
+
+&lt;p&gt;Posortowanie listy zalogowanych uzytkownikow ze stronami.&lt;/p&gt;
+
+&lt;pre&gt;
+who | sort | less                          # 12
+&lt;/pre&gt;
+
+
+&lt;p&gt;Posortowanie listy zalogowanych uzytkownikow ze stronami.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Odpowiedzi laboratorium 3</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/26/odpowiedzi-lab3/"/>
+   <updated>2009-10-26T00:00:00+01:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/26/odpowiedzi-lab3</id>
+   <content type="html">&lt;h1&gt;Odpowiedzi laboratorium 3&lt;/h1&gt;
+
+&lt;h2&gt;Zadanie 1&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl plik /etc/passwd z podziałem na strony
+przyjmując, że strona na 5 linii tekstu.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma etc]$ pg -5 /etc/passwd
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 2&lt;/h2&gt;
+
+&lt;p&gt;Korzystając z polecenia cat utwórz plik
+tekst3.txt, który będzie składał się z
+zawartości pliku tekst1.txt, ciągu znaków
+podanego ze standardowego wejścia (klawiatury) i
+pliku tekst2.txt.&lt;/p&gt;
+
+&lt;pre&gt;
+
+[mskorb@sigma sp]$ cat &gt; tekst1.txt
+t1
+[mskorb@sigma sp]$ ls
+tekst1.txt
+[mskorb@sigma sp]$ cat &gt; tekst2.txt
+t2
+[mskorb@sigma sp]$ cat tekst1.txt &gt; tekst3.txt
+[mskorb@sigma sp]$ ls
+tekst1.txt  tekst2.txt  tekst3.txt
+[mskorb@sigma sp]$ cat &gt;&gt; tekst3.txt
+tekst z klawiatury
+[mskorb@sigma sp]$ cat tekst3.txt
+t1
+tekst z klawiatury
+t2
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 3&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl po 5 pierwszych linii wszystkich plików
+w swoim katalogu domowym w taki sposób, aby nie
+były wyświetlane ich nazwy.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma sp]$ head --quiet --lines 5 *
+
+wariant skrótowy:
+[mskorb@sigma sp]$ head -qn 5 *
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 4&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl linie o numerach 3, 4 i 5 z pliku
+/etc/passwd.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ nl /etc/passwd &gt; passwd
+[mskorb@sigma ~]$ ls
+[mskorb@sigma ~]$ head -n 5 passwd  | tail -n 3
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 5&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl linie o numerach 7, 6 i 5 od końca
+pliku /etc/passwd.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ cat /etc/passwd | sed -n 3,5p
+daemon:x:2:2:daemon:/sbin:/bin/false
+adm:x:3:4:adm:/var/account:/bin/false
+lp:x:4:7:lp:/var/spool/lpd:/bin/false
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 6&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl zawartość pliku /etc/passwd w jednej
+linii.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma sp]$ cat /etc/passwd  | tr --delete &quot;\n&quot;
+
+wariant skrótowy:
+[mskorb@sigma sp]$ cat /etc/passwd  | tr -d &quot;\n&quot;
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 7&lt;/h2&gt;
+
+&lt;p&gt;Za pomocą filtru tr wykonaj modyfikację pliku
+plik.txt, polegającą na umieszczeniu każdego
+słowa w osobnej linii.&lt;/p&gt;
+
+&lt;pre&gt;
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 8&lt;/h2&gt;
+
+&lt;p&gt;Zlicz wszystkie pliki znajdujące się w katalogu
+/etc i jego podkatalogach&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ find /etc/ -type f 2&gt; errors | wc -l
+831
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 9&lt;/h2&gt;
+
+&lt;p&gt;Napisać polecenie zliczające ilość znaków z
+pierwszych trzech linii pliku /etc/passwd.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ head /etc/passwd -n 3 | wc -c
+99
+&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Odpowiedzi laboratorium 2</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/24/odpowiedzi-lab-2/"/>
+   <updated>2009-10-24T00:00:00+02:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/24/odpowiedzi-lab-2</id>
+   <content type="html">&lt;h1&gt;Odpowiedzi laboratorium 2&lt;/h1&gt;
+
+&lt;p&gt;W katalogu c utwórz plik program.c zawierający co najmniej 10 linii kodu napisanego w języku C. (Sam kod należy wyszukać i pobrać z sieci.)&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ cd c
+[mskorb@sigma c]$ nano program.c
+[mskorb@sigma c]$ ls
+program.c
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 1&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl na ekran 2 pierwsze wiersze pliku program.c. (head)&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma c]$ cat program.c | grep . -m 2
+\#include&lt;stdio.h&gt;
+main()
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 2&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl na ekran 4 ostatnie wiersze pliku program.c. (head, tail)&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma c]$ tail program.c -n -4
+        printf(&quot;\n&quot;);
+        i=i+1;
+        }
+}
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 3&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl na ekran całą zawartość pliku program.c.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma c]$ cat program.c
+\#include&lt;stdio.h&gt;
+main()
+{
+int j=0;
+int i=0;
+int t;
+
+while(i&lt;10)
+        {
+        while(j&lt;10)
+                {
+                t=i*j;
+                printf(&quot;%2i &quot; ,t);
+                j=j+1;
+                }
+        j=0;
+        printf(&quot;\n&quot;);
+        i=i+1;
+        }
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 4&lt;/h2&gt;
+
+&lt;p&gt;W pliku program.c znajdź wszystkie wiersze z wystąpieniem słowa „main”. (grep)&lt;/p&gt;
+
+&lt;pre&gt;
+
+[mskorb@sigma c]$ cat program.c | grep '\bmain\b'
+main()
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 5&lt;/h2&gt;
+
+&lt;p&gt;Plikowi program.c nadaj następujące uprawnienia: właściciel – czytanie, pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (chmod)&lt;/p&gt;
+
+&lt;pre&gt;
+
+[mskorb@sigma c]$ chmod u+rw program.c
+[mskorb@sigma c]$ chmod g+r program.c
+[mskorb@sigma c]$ chmod o-rwx program.c
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 6&lt;/h2&gt;
+
+&lt;p&gt;Będąc w katalogu temp przenieś katalog wazne-sprawy do katalogu praca.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ mv dom/wazne-sprawy/ praca/
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 7&lt;/h2&gt;
+
+&lt;p&gt;Zarchiwizuj cały katalog temp. (zip i tar)&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ zip -r temp.zip temp
+updating: temp/ (stored 0%)
+  adding: temp/praca/ (stored 0%)
+  adding: temp/praca/dokumenty/ (stored 0%)
+  adding: temp/praca/dokumenty/xab (stored 0%)
+  adding: temp/praca/dokumenty/xaa (stored 0%)
+  adding: temp/praca/dokumenty/xac (stored 0%)
+  adding: temp/praca/zlecenia/ (stored 0%)
+  adding: temp/praca/zlecenia/niezrealizowane/ (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/ (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/xab (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/wykonano.txt (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/xaa (stored 0%)
+  adding: temp/praca/zlecenia/zrealizowane/xac (stored 0%)
+  adding: temp/praca/wazne-sprawy/ (stored 0%)
+  adding: temp/praca/wazne-sprawy/odtworzono.txt (stored 0%)
+  adding: temp/nauka/ (stored 0%)
+  adding: temp/nauka/logo/ (stored 0%)
+  adding: temp/nauka/c/ (stored 0%)
+  adding: temp/nauka/c/program.c (deflated 25%)
+  adding: temp/nauka/pascal/ (stored 0%)
+  adding: temp/dom/ (stored 0%)
+  adding: temp/dom/rachunki.txt (stored 0%)
+  
+
+[mskorb@sigma ~]$ tar -cf temp.tar temp
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 8&lt;/h2&gt;
+
+&lt;p&gt;Usuń katalog temp.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ rm -r temp
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 9&lt;/h2&gt;
+
+&lt;p&gt;Odtwórz z archiwum katalog temp. (unzip i tar)&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ unzip temp.zip
+Archive:  temp.zip
+   creating: temp/
+   creating: temp/praca/
+   creating: temp/praca/dokumenty/
+ extracting: temp/praca/dokumenty/xab
+ extracting: temp/praca/dokumenty/xaa
+ extracting: temp/praca/dokumenty/xac
+   creating: temp/praca/zlecenia/
+   creating: temp/praca/zlecenia/niezrealizowane/
+   creating: temp/praca/zlecenia/zrealizowane/
+ extracting: temp/praca/zlecenia/zrealizowane/xab
+ extracting: temp/praca/zlecenia/zrealizowane/wykonano.txt
+ extracting: temp/praca/zlecenia/zrealizowane/xaa
+ extracting: temp/praca/zlecenia/zrealizowane/xac
+   creating: temp/praca/wazne-sprawy/
+ extracting: temp/praca/wazne-sprawy/odtworzono.txt
+   creating: temp/nauka/
+   creating: temp/nauka/logo/
+   creating: temp/nauka/c/
+  inflating: temp/nauka/c/program.c
+   creating: temp/nauka/pascal/
+   creating: temp/dom/
+ extracting: temp/dom/rachunki.txt
+
+
+[mskorb@sigma ~]$ rm -r  temp
+[mskorb@sigma ~]$ tar xvf temp.tar
+temp/
+temp/praca/
+temp/praca/dokumenty/
+temp/praca/dokumenty/xab
+temp/praca/dokumenty/xaa
+temp/praca/dokumenty/xac
+temp/praca/zlecenia/
+temp/praca/zlecenia/niezrealizowane/
+temp/praca/zlecenia/zrealizowane/
+temp/praca/zlecenia/zrealizowane/xab
+temp/praca/zlecenia/zrealizowane/wykonano.txt
+temp/praca/zlecenia/zrealizowane/xaa
+temp/praca/zlecenia/zrealizowane/xac
+temp/praca/wazne-sprawy/
+temp/praca/wazne-sprawy/odtworzono.txt
+temp/nauka/
+temp/nauka/logo/
+temp/nauka/c/
+temp/nauka/c/program.c
+temp/nauka/pascal/
+temp/dom/
+temp/dom/rachunki.txt
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 10&lt;/h2&gt;
+
+&lt;p&gt;Posprzątaj na swoim koncie.&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ rm -r temp.zip
+[mskorb@sigma ~]$ rm -r temp.tar
+&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Odpowiedzi laboratorium 1 (poprawione)</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/18/odpowiedzi-lab-1-nowe/"/>
+   <updated>2009-10-18T00:00:00+02:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/18/odpowiedzi-lab-1-nowe</id>
+   <content type="html">&lt;h1&gt;Odpowiedzi laboratorium 1 (poprawione)&lt;/h1&gt;
+
+&lt;h2&gt;Zadanie 1&lt;/h2&gt;
+
+&lt;p&gt;Używając linii poleceń stwórz strukturę katalogów.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ mkdir temp
+[mskorb@sigma temp]$ mkdir dom
+[mskorb@sigma temp]$ mkdir nauka
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ mkdir c
+[mskorb@sigma nauka]$ mkdir logo
+[mskorb@sigma nauka]$ mkdir pascal
+[mskorb@sigma nauka]$ cd ..
+[mskorb@sigma temp]$ mkdir praca
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ mkdir dokumenty
+[mskorb@sigma praca]$ mkdir zlecenia
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ mkdir niezrealizowane
+[mskorb@sigma zlecenia]$ mkdir zrealizowane
+[mskorb@sigma zlecenia]$ cd .. 
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ tree
+.
+|-- dom
+|-- nauka
+|   |-- c
+|   |-- logo
+|   `-- pascal
+`-- praca
+    |-- dokumenty
+    `-- zlecenia
+        |-- niezrealizowane
+        `-- zrealizowane
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 2&lt;/h2&gt;
+
+&lt;p&gt;Przejdź do katalogu dom i utwórz katalog wazne-sprawy.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ cd dom
+[mskorb@sigma dom]$ mkdir wazne-sprawy
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 3&lt;/h2&gt;
+
+&lt;p&gt;Wejdź do katalogu wazne-sprawy i utwórz tam pusty plik rachunki.txt.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma dom]$ cd wazne-sprawy
+[mskorb@sigma wazne-sprawy]$ touch rachunki.txt
+[mskorb@sigma wazne-sprawy]$ ls
+rachunki.txt
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 4&lt;/h2&gt;
+
+&lt;p&gt;Będąc w katalogu wazne-sprawy skopiuj plik rachunki.txt do katalogu zrealizowane.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma wazne-sprawy]$ cp rachunki.txt ../../praca/zlecenia/zrealizowane
+[mskorb@sigma wazne-sprawy]$ cd ..
+[mskorb@sigma dom]$ cd ..
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ cd zrealizowane
+[mskorb@sigma zrealizowane]$ ls
+rachunki.txt
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 5&lt;/h2&gt;
+
+&lt;p&gt;Przejdź do katalogu zrealizowane i zmień nazwę pliku rachunki.txt na wykonano.txt.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ cd zrealizowane
+[mskorb@sigma zrealizowane]$ ls
+rachunki.txt
+[mskorb@sigma zrealizowane]$ mv rachunki.txt wykonano.txt
+[mskorb@sigma zrealizowane]$ ls
+wykonano.txt
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 6&lt;/h2&gt;
+
+&lt;p&gt;Utwórz plik wykonano.txt wielkości 11 bajtów, następnie podziel go pliki wielkości 5 bajtów. W ten sposób otrzymasz 3 pliki. (split)&lt;/p&gt;
+
+&lt;hr/&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma zrealizowane]$ echo 1234567890 &gt; rachunki.txt
+[mskorb@sigma zrealizowane]$ split --bytes=5 wykonano.txt
+[mskorb@sigma zrealizowane]$ ls
+wykonano.txt  xaa  xab  xac
+[mskorb@sigma zrealizowane]$ cat xaa
+12345
+[mskorb@sigma zrealizowane]$ cat xab
+67891
+[mskorb@sigma zrealizowane]$ cat xac
+1
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 7&lt;/h2&gt;
+
+&lt;p&gt;Będąc w katalogu logo skopiuj powyżej otrzymane 3 pliki do katalogu dokumenty.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+mskorb@sigma zrealizowane]$ cd ..
+[mskorb@sigma zlecenia]$ cd ..
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ cd logo
+[mskorb@sigma logo]$ cp ../../praca/zlecenia/zrealizowane/x* ../../praca/dokumenty
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 8&lt;/h2&gt;
+
+&lt;p&gt;Będąc w katalogu dokumenty połącz skopiowane 3 pliki w plik odtworzono.txt, tak aby otrzymać plik o zawartości identycznej z wykonano.txt. Następnie plik odtworzono.txt skopiuj do katalogu wazne-sprawy.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma logo]$ cd ..
+[mskorb@sigma nauka]$ cd ..
+[mskorb@sigma temp]$ ls
+dom  nauka  praca
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd dokumenty
+[mskorb@sigma dokumenty]$ ls
+xaa  xab  xac
+[mskorb@sigma dokumenty]$ cat x*
+12345678901
+[mskorb@sigma dokumenty]$ cat x* &gt;&gt; odtworzono.txt
+[mskorb@sigma dokumenty]$ ls
+odtworzono.txt  xaa  xab  xac
+[mskorb@sigma dokumenty]$ cp odtworzono.txt ../../dom/wazne-sprawy
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 9&lt;/h2&gt;
+
+&lt;p&gt;Będąc w katalogu wazne-sprawy sprawdź, czy są jakieś różnice w zawartości plików wykonano.txt i odtworzono.txt.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma dokumenty]$ cd ..
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ cd ..
+[mskorb@sigma ~]$ cd temp
+[mskorb@sigma temp]$ cd dom
+[mskorb@sigma dom]$ ls
+wazne-sprawy
+[mskorb@sigma dom]$ cd wazne-sprawy
+[mskorb@sigma wazne-sprawy]$ ls
+odtworzono.txt rachunki.txt
+[mskorb@sigma wazne-sprawy]$ diff ./odtworzono.txt ../../praca/zlecenia/zrealizowane/wykonano.txt
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 10&lt;/h2&gt;
+
+&lt;p&gt;Wyświetl kalendarz na październik 2009 r. (cal)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;pre&gt;
+[mskorb@sigma sp]$ cal -m
+  październik 2009
+po wt śr cz pi so ni
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+
+&lt;/pre&gt;
+
+
+&lt;p&gt;Wyświetl kalendarz na wrzesień, październik i listopad 2009 r.
+ z miesiącami obok siebie (cal).&lt;/p&gt;
+
+&lt;pre&gt;
+
+[mskorb@sigma temp]$ cal -3m
+    wrzesień 2009       październik 2009        listopad 2009
+po wt śr cz pi so ni   po wt śr cz pi so ni   po wt śr cz pi so ni
+    1  2  3  4  5  6            1  2  3  4                     1
+ 7  8  9 10 11 12 13    5  6  7  8  9 10 11      2  3  4  5  6  7  8
+14 15 16 17 18 19 20    12 13 14 15 16 17 18     9 10 11 12 13 14 15
+21 22 23 24 25 26 27    19 20 21 22 23 24 25    16 17 18 19 20 21 22
+28 29 30                26 27 28 29 30 31       23 24 25 26 27 28 29
+                                                30
+&lt;/pre&gt;
+
+
+&lt;p&gt;Wyświetl kalendarz na październik, listopad i grudzień 2009 r.&lt;/p&gt;
+
+&lt;pre&gt;
+
+[mskorb@sigma temp]$ cal 11 2009 -3m
+  październik 2009        listopad 2009         grudzień 2009
+po wt śr cz pi so ni  po wt śr cz pi so ni  po wt śr cz pi so ni
+          1  2  3  4                     1      1  2  3  4  5  6
+ 5  6  7  8  9 10 11   2  3  4  5  6  7  8   7  8  9 10 11 12 13
+12 13 14 15 16 17 18   9 10 11 12 13 14 15  14 15 16 17 18 19 20
+19 20 21 22 23 24 25  16 17 18 19 20 21 22  21 22 23 24 25 26 27
+26 27 28 29 30 31     23 24 25 26 27 28 29  28 29 30 31
+                      30
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 11&lt;/h2&gt;
+
+&lt;p&gt;Jaki był dzień tygodnia 25 maja 1975 r. (cal i date)&lt;/p&gt;
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ date -d 1975-05-25 +%A
+niedziela
+&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Odpowiedzi laboratorium 1 (stara wersja)</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/18/odpowiedzi-lab-1/"/>
+   <updated>2009-10-18T00:00:00+02:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/18/odpowiedzi-lab-1</id>
+   <content type="html">&lt;h1&gt;Odpowiedzi laboratorium 1 (stara wersja)&lt;/h1&gt;
+
+&lt;h2&gt;Zadanie 1&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ cal -m
+  październik 2009
+po wt śr cz pi so ni
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 2&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ date -d 1975-05-25 +%A
+niedziela
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 3&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma ~]$ mkdir temp
+[mskorb@sigma temp]$ mkdir dom
+[mskorb@sigma temp]$ mkdir nauka
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ mkdir c
+[mskorb@sigma nauka]$ mkdir logo
+[mskorb@sigma nauka]$ mkdir pascal
+[mskorb@sigma nauka]$ cd ..
+[mskorb@sigma temp]$ mkdir praca
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ mkdir dokumenty
+[mskorb@sigma praca]$ mkdir zlecenia
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ mkdir niezrealizowane
+[mskorb@sigma zlecenia]$ mkdir zrealizowane
+[mskorb@sigma zlecenia]$ cd .. 
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ tree
+.
+|-- dom
+|-- nauka
+|   |-- c
+|   |-- logo
+|   `-- pascal
+`-- praca
+    |-- dokumenty
+    `-- zlecenia
+        |-- niezrealizowane
+        `-- zrealizowane
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 4&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ cd dom
+[mskorb@sigma dom]$ mkdir wazne-sprawy
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 5&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma dom]$ cd wazne-sprawy
+[mskorb@sigma wazne-sprawy]$ echo 12345678911 &gt; rachunki.txt
+[mskorb@sigma wazne-sprawy]$ ls
+rachunki.txt
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 6&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma wazne-sprawy]$ cp rachunki.txt ../../praca/zlecenia/zrealizowane
+[mskorb@sigma wazne-sprawy]$ cd ..
+[mskorb@sigma dom]$ cd ..
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ cd zrealizowane
+[mskorb@sigma zrealizowane]$ ls
+rachunki.txt
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 7&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ cd zrealizowane
+[mskorb@sigma zrealizowane]$ ls
+rachunki.txt
+[mskorb@sigma zrealizowane]$ mv rachunki.txt wykonano.txt
+[mskorb@sigma zrealizowane]$ ls
+wykonano.txt
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 8&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma zrealizowane]$ split --bytes=5 wykonano.txt
+[mskorb@sigma zrealizowane]$ ls
+wykonano.txt  xaa  xab  xac
+[mskorb@sigma zrealizowane]$ cat xaa
+12345
+[mskorb@sigma zrealizowane]$ cat xab
+67891
+[mskorb@sigma zrealizowane]$ cat xac
+1
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 9&lt;/h2&gt;
+
+&lt;pre&gt;
+mskorb@sigma zrealizowane]$ cd ..
+[mskorb@sigma zlecenia]$ cd ..
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ tree
+.
+|-- dom
+|   |-- rachunki.txt
+|   `-- wazne-sprawy
+|-- nauka
+|   |-- c
+|   |-- logo
+|   `-- pascal
+`-- praca
+    |-- dokumenty
+    `-- zlecenia
+        |-- niezrealizowane
+        `-- zrealizowane
+            |-- wykonano.txt
+            |-- xaa
+            |-- xab
+            `-- xac
+
+11 directories, 5 files
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ cd logo
+[mskorb@sigma logo]$ cp ../../praca/zlecenia/zrealizowane/x* ../../praca/dokumenty
+
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 10&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma logo]$ cd ..
+[mskorb@sigma nauka]$ cd ..
+[mskorb@sigma temp]$ ls
+dom  nauka  praca
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd dokumenty
+[mskorb@sigma dokumenty]$ ls
+xaa  xab  xac
+[mskorb@sigma dokumenty]$ cat x*
+12345678901
+[mskorb@sigma dokumenty]$ cat x* &gt;&gt; odtworzono.txt
+[mskorb@sigma dokumenty]$ ls
+odtworzono.txt  xaa  xab  xac
+[mskorb@sigma dokumenty]$ cp odtworzono.txt ../../dom/wazne-sprawy
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 11&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma dokumenty]$ cd ..
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ cd ..
+[mskorb@sigma ~]$ cd temp
+[mskorb@sigma temp]$ cd dom
+[mskorb@sigma dom]$ ls
+wazne-sprawy
+[mskorb@sigma dom]$ cd wazne-sprawy
+[mskorb@sigma wazne-sprawy]$ ls
+odtworzono.txt rachunki.txt
+[mskorb@sigma wazne-sprawy]$ diff ./odtworzono.txt ../../praca/zlecenia/zrealizowane/wykonano.txt
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Zadanie 12&lt;/h2&gt;
+
+&lt;pre&gt;
+[mskorb@sigma wazne-sprawy]$ 
+[mskorb@sigma wazne-sprawy]$ cd ..
+[mskorb@sigma dom]$ cd ..
+[mskorb@sigma temp]$ cd nauka/c
+[mskorb@sigma c]$ touch program.c
+[mskorb@sigma c]$ emacs program.c
+&lt;/pre&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Pierwszy post na jBlogu</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/06/pierwsz-post-w-jblogu/"/>
+   <updated>2009-10-06T00:00:00+02:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/10/06/pierwsz-post-w-jblogu</id>
+   <content type="html">
+
+&lt;blockquote&gt;
+&lt;img src=&quot;../../../../images/alan-perlis.gif&quot; alt=&quot;[Alan Perlis]&quot; /&gt;
+&lt;p&gt;
+  Dealing with failure is easy: Work hard to improve. Success is also
+  easy to handle: You've solved the wrong problem. Work hard to improve.
+&lt;/p&gt;
+&lt;p class=&quot;author&quot;&gt;— Alan Perlis&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;h1&gt;Pierwszy post na jBlogu&lt;/h1&gt;
+
+&lt;h2&gt;pierwszy post w jblogu&lt;/h2&gt;
+
+&lt;p&gt;To jest pierwszy post napisany przezemnie w jBlogu majacy na celu zapoznanie sie z jego mozliwosciami.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Jekyll-Blog HOWTO</title>
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/06/12/jekyll-howto/"/>
+   <updated>2009-06-12T00:00:00+02:00</updated>
+   <id>http://sigma.inf.ug.edu.pl/~mskorb/sp/2009/06/12/jekyll-howto</id>
+   <content type="html">
+
+&lt;blockquote&gt;
+&lt;img src=&quot;../../../../images/alan-perlis.gif&quot; alt=&quot;[Alan Perlis]&quot; /&gt;
+&lt;p&gt;
+  Dealing with failure is easy: Work hard to improve. Success is also
+  easy to handle: You've solved the wrong problem. Work hard to improve.
+&lt;/p&gt;
+&lt;p class=&quot;author&quot;&gt;— Alan Perlis&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;h1&gt;Jekyll-Blog HOWTO&lt;/h1&gt;
+
+&lt;h2&gt;Markdown&lt;/h2&gt;
+
+&lt;p&gt;Posty wpisujemy używając notacji Markdown.
+Notacja jest opisana przez autora Johna Grubera
+w witrynie &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Daring Fireball&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Kolorowanie kodu&lt;/h2&gt;
+
+&lt;p&gt;Kod wpisujemy tak:&lt;/p&gt;
+
+&lt;pre&gt;
+&amp;#123;% highlight ruby %&amp;#125;
+def foo
+  puts 'foo'
+end
+&amp;#123;% endhighlight %&amp;#125;
+&lt;/pre&gt;
+
+
+&lt;p&gt;A tak to wygląda po podkolorowaniu:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Kod jest kolorowany przez narzędzie
+&lt;a href=&quot;http://pygments.org/docs/cmdline/&quot;&gt;pygmentize&lt;/a&gt;.
+Wykonanie polecenia:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pygmentize -L lexers
+...
+* css+erb, css+ruby:
+* erb:
+* js+erb, javascript+erb, js+ruby, javascript+ruby:
+* rhtml, html+erb, html+ruby:
+* xml+erb, xml+ruby
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;wypisuje listę obsługiwanych języków programowania.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>

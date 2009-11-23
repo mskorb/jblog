@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl-pl">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Odpowiedzi laboratorium 1 (stara wersja)</title>
+   <meta name="author" content="Mateusz Skorb" />
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/atom.xml" rel="alternate" 
+         title="Włodek Bzyl" type="application/atom+xml" />
+
+   <link rel="stylesheet" href="../../../../css/syntax.css" type="text/css" />
+   <link rel="stylesheet" href="../../../../css/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="../../../../css/blog.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+
+<div class="site span-21"><!--  showgrid -->
+
+  <div class="title span-21">
+    <img class="prepend-1" src="../../../../images/logo.png" alt="[logo]" />
+    <a class="append-7" href="/~mskorb/sp/">home</a>
+  </div>
+  
+  <div id="post" class="prepend-1 span-13">
+<h1>Odpowiedzi laboratorium 1 (stara wersja)</h1>
+
+<h2>Zadanie 1</h2>
+
+<pre>
+[mskorb@sigma temp]$ cal -m
+  październik 2009
+po wt śr cz pi so ni
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+</pre>
+
+
+<h2>Zadanie 2</h2>
+
+<pre>
+[mskorb@sigma temp]$ date -d 1975-05-25 +%A
+niedziela
+</pre>
+
+
+<h2>Zadanie 3</h2>
+
+<pre>
+[mskorb@sigma ~]$ mkdir temp
+[mskorb@sigma temp]$ mkdir dom
+[mskorb@sigma temp]$ mkdir nauka
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ mkdir c
+[mskorb@sigma nauka]$ mkdir logo
+[mskorb@sigma nauka]$ mkdir pascal
+[mskorb@sigma nauka]$ cd ..
+[mskorb@sigma temp]$ mkdir praca
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ mkdir dokumenty
+[mskorb@sigma praca]$ mkdir zlecenia
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ mkdir niezrealizowane
+[mskorb@sigma zlecenia]$ mkdir zrealizowane
+[mskorb@sigma zlecenia]$ cd .. 
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ tree
+.
+|-- dom
+|-- nauka
+|   |-- c
+|   |-- logo
+|   `-- pascal
+`-- praca
+    |-- dokumenty
+    `-- zlecenia
+        |-- niezrealizowane
+        `-- zrealizowane
+</pre>
+
+
+<h2>Zadanie 4</h2>
+
+<pre>
+[mskorb@sigma temp]$ cd dom
+[mskorb@sigma dom]$ mkdir wazne-sprawy
+</pre>
+
+
+<h2>Zadanie 5</h2>
+
+<pre>
+[mskorb@sigma dom]$ cd wazne-sprawy
+[mskorb@sigma wazne-sprawy]$ echo 12345678911 > rachunki.txt
+[mskorb@sigma wazne-sprawy]$ ls
+rachunki.txt
+</pre>
+
+
+<h2>Zadanie 6</h2>
+
+<pre>
+[mskorb@sigma wazne-sprawy]$ cp rachunki.txt ../../praca/zlecenia/zrealizowane
+[mskorb@sigma wazne-sprawy]$ cd ..
+[mskorb@sigma dom]$ cd ..
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ cd zrealizowane
+[mskorb@sigma zrealizowane]$ ls
+rachunki.txt
+
+</pre>
+
+
+<h2>Zadanie 7</h2>
+
+<pre>
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd zlecenia
+[mskorb@sigma zlecenia]$ cd zrealizowane
+[mskorb@sigma zrealizowane]$ ls
+rachunki.txt
+[mskorb@sigma zrealizowane]$ mv rachunki.txt wykonano.txt
+[mskorb@sigma zrealizowane]$ ls
+wykonano.txt
+</pre>
+
+
+<h2>Zadanie 8</h2>
+
+<pre>
+[mskorb@sigma zrealizowane]$ split --bytes=5 wykonano.txt
+[mskorb@sigma zrealizowane]$ ls
+wykonano.txt  xaa  xab  xac
+[mskorb@sigma zrealizowane]$ cat xaa
+12345
+[mskorb@sigma zrealizowane]$ cat xab
+67891
+[mskorb@sigma zrealizowane]$ cat xac
+1
+
+</pre>
+
+
+<h2>Zadanie 9</h2>
+
+<pre>
+mskorb@sigma zrealizowane]$ cd ..
+[mskorb@sigma zlecenia]$ cd ..
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ tree
+.
+|-- dom
+|   |-- rachunki.txt
+|   `-- wazne-sprawy
+|-- nauka
+|   |-- c
+|   |-- logo
+|   `-- pascal
+`-- praca
+    |-- dokumenty
+    `-- zlecenia
+        |-- niezrealizowane
+        `-- zrealizowane
+            |-- wykonano.txt
+            |-- xaa
+            |-- xab
+            `-- xac
+
+11 directories, 5 files
+[mskorb@sigma temp]$ cd nauka
+[mskorb@sigma nauka]$ cd logo
+[mskorb@sigma logo]$ cp ../../praca/zlecenia/zrealizowane/x* ../../praca/dokumenty
+
+</pre>
+
+
+<h2>Zadanie 10</h2>
+
+<pre>
+[mskorb@sigma logo]$ cd ..
+[mskorb@sigma nauka]$ cd ..
+[mskorb@sigma temp]$ ls
+dom  nauka  praca
+[mskorb@sigma temp]$ cd praca
+[mskorb@sigma praca]$ cd dokumenty
+[mskorb@sigma dokumenty]$ ls
+xaa  xab  xac
+[mskorb@sigma dokumenty]$ cat x*
+12345678901
+[mskorb@sigma dokumenty]$ cat x* >> odtworzono.txt
+[mskorb@sigma dokumenty]$ ls
+odtworzono.txt  xaa  xab  xac
+[mskorb@sigma dokumenty]$ cp odtworzono.txt ../../dom/wazne-sprawy
+</pre>
+
+
+<h2>Zadanie 11</h2>
+
+<pre>
+[mskorb@sigma dokumenty]$ cd ..
+[mskorb@sigma praca]$ cd ..
+[mskorb@sigma temp]$ cd ..
+[mskorb@sigma ~]$ cd temp
+[mskorb@sigma temp]$ cd dom
+[mskorb@sigma dom]$ ls
+wazne-sprawy
+[mskorb@sigma dom]$ cd wazne-sprawy
+[mskorb@sigma wazne-sprawy]$ ls
+odtworzono.txt rachunki.txt
+[mskorb@sigma wazne-sprawy]$ diff ./odtworzono.txt ../../praca/zlecenia/zrealizowane/wykonano.txt
+</pre>
+
+
+<h2>Zadanie 12</h2>
+
+<pre>
+[mskorb@sigma wazne-sprawy]$ 
+[mskorb@sigma wazne-sprawy]$ cd ..
+[mskorb@sigma dom]$ cd ..
+[mskorb@sigma temp]$ cd nauka/c
+[mskorb@sigma c]$ touch program.c
+[mskorb@sigma c]$ emacs program.c
+</pre>
+
+
+
+
+</div>
+
+
+</div>
+
+</body>
+</html>
