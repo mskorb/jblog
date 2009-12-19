@@ -12,7 +12,7 @@ body {
 
 #site {
 width:800px;
-border: solid #000; border-width: 0 1px;
+border: solid rgb(96,96,96); border-width: 0 1px;
 
 margin: auto;
 
@@ -44,7 +44,7 @@ float:left;
 width:800px;
 height:auto;
 float: left;
-background: #d3cebc url(./images/bg.jpg);
+background: #d3cebc url(../images/bg.jpg);
 min-height:800px;
 repeat-x;
 }
@@ -53,6 +53,7 @@ repeat-x;
 width:72%; 
 float: left;
 } 
+
 #home {
 margin-left: 15px;
 padding 10 px;
@@ -86,7 +87,7 @@ border: solid #c7c4b1; border-width: 1px;
 
 #footer {
 width:800px;
-background: #d3cebc url(./sp/images/footer.jpg);
+background: #d3cebc url(../images/footer.jpg);
 repeat-y;
 height:auto;
 }
@@ -100,6 +101,20 @@ color:#fff;
 
 }
 
+div#home li{
+font-size:1.2em;
+padding-bottom:3px;
+list-style:none;
+
+
+}
+
+div#home h1{
+font-size:1.5em;
+padding-bottom:5px;
+
+}
+
 .clear{
 clear:both;
 
@@ -108,11 +123,11 @@ hr {
 color: #fff;
 }
 
-
-A:link {text-decoration: none; color:#1b53a6;}
-A:visited {text-decoration: none; color:#1b53a6;}
-A:active {text-decoration: none; color:#555555;}
-A:hover {text-decoration: underline; color: #8f8f8f;}
+                                                
+A:link {text-decoration: underline; color:color:rgb(80,0,0);}
+A:visited {text-decoration: underline; color:rgb(96,96,96);}
+A:active {text-decoration: none; color:#color:rgb(80,0,0);}
+A:hover {text-decoration: underline; color: #rgb(0,0,0);}
 
 img {
 border: 0px;
