@@ -14,19 +14,20 @@ Znajdź w swoim katalogu domowym (bez podkatalogów) wszystkie pliki, które zos
 ## Zadanie 2
 Znajdź wszystkie pliki zwykłe w systemie, które mają w nazwie ciąg znaków „conf” i wyświetl ich nazwy na ekranie.
 <pre>
-[mskorb@localhost]$ find /-type f -name \*conf\*
+[mskorb@localhost]$ find -type f -name \*conf\*
 </pre>
 
 ## Zadanie 3
 Znajdź w swoim katalogu domowym wszystkie pliki, które nie były używane w ciągu ostatnich 20 dni.
 <pre>
-[mskorb@localhost]$ find ~/ -mtime -20 -type f
+[mskorb@localhost]$ find ~/ -mtime -20
 </pre>
 
 ## Zadanie 4
 Znajdź w katalogu /etc wszystkie niepuste podkatalogi i pliki o nazwach zaczynających się na literę „a”.
 <pre>
-[mskorb@localhost]$ find /etc 
+[mskorb@localhost]$ find /etc (-type f -and -name a*) -or (-type d -and! 
+-empty
 </pre>
 
 ## Zadanie 5
