@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
+   <title>Grep</title>
    <meta name="author" content="Mateusz Skorb" />
    <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/atom.xml" rel="alternate" 
          title="Mateusz Skorb" type="application/atom+xml" />
@@ -20,18 +20,41 @@
 
 <div id="bg_tlo">
           <div id ="left">
-          <div id = "left_inner">
-           {{ content }}
+          <div id = "left_inner" style="border: solid #514131; border-width: 5px 0 0 0;">
+           <div id="post" class="prepend-1 span-13">
+<h1>Grep</h1>
+
+<h2>Zadanie</h2>
+
+<p>Wymyśl dwa zadania używające polecenia egrep i nietrywialne wyrażenie
+regularne.</p>
+
+<p><b>Szkic roboczy (Znaleziono na:
+m1chu.eu/2009/10/13/15-przydatnych-wyrazen-regularnych-w-php/).
+Wersja ostateczna jeszcze nie gotowa.
+</b></p>
+
+<p><li>( Wzorzec ) Prosta weryfikacja adresu URL (format protokół://adres_serwera:port/)
+   <br />
+<span>
+/^(http|ftp)([s]{0,1}):\/\/([a-z0-9]{1})((([a-z0-9-]<em>[-]{2})|([a-z0-9])</em>|([a-z0-9-]<em>[-]{1}[a-z0-9]+))</em>)((.<a href="([a-z0-9-]*[-]{2}">a-z0-9</a>|([a-z0-9]<em>)|([a-z0-9-]</em>[-]{1}[a-z0-9]+))+)<em>)(.([a-z0-9]{2,6})){0,1}((:[0-9]){0}|(:[1-9]{1}[0-9]</em>))\//iu
+</span></p>
+
+<p><li>( Wzorzec )   Sprawdzanie adresu e-mail
+<span>
+/^([a-z0-9]{1})([^\s\t.@]<em>)((.[^\s\t.@]+)</em>)@([a-z0-9]{1})((([a-z0-9-]<em>[-]{2})|([a-z0-9])</em>|([a-z0-9-]<em>[-]{1}[a-z0-9]+))</em>)((.<a href="([a-z0-9-]*[-]{2}">a-z0-9</a>|([a-z0-9]<em>)|([a-z0-9-]</em>[-]{1}[a-z0-9]+))+)*).([a-z0-9]{2,6})([.]?)$/Diu
+</span></p>
+
+</div>
+
           </div>
           </div>
           
           <div id ="right">
-          <div id = "right_inner">
+          <div id = "right_inner" style="border: solid #a69d8f; border-width: 5px 0 0 0;">
                 <h4> Środowisko Programisty - Mateusz Skorb - Programming Environment </h4> <br />
             <a href="../../../../"> - Str. główna</a><br />
             <a href="../../../../../kolosp/"> - Luźne notatki, do nauki</a><br />
-            <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/"> - UNIX tutorial dla początkujących (ENG)</a>
-           <br />
            <br />
            <h4> Przydatne odsyłacze: </h4>  <br />
           <a href="http://sinatra.inf.ug.edu.pl/sp/" target="_blank" /> - Środowisko Programisty </a><br />

@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Odpowiedzi laboratorium 4</title>
+   <meta name="author" content="Mateusz Skorb" />
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/atom.xml" rel="alternate" 
+         title="Mateusz Skorb" type="application/atom+xml" />
+    
+   <link rel="stylesheet" href="../../../../css/style2.css" type="text/css" />
+   <link rel="stylesheet" href="../../../../css/syntax.css" type="text/css" />
+     
+<body>
+<div style="background-image:url(../../../../images/grad.jpg); background-repeat:repeat-x; background-position:top;">
+<div id="site">
+
+<div id="header1"><a href="../../../../"><img src="../../../../images/header1.gif" alt="Środowisko Programisty - Mateusz Skorb"/></a></div>
+<div id="logo"><a href="../../../../"><img src="../../../../images/logo.gif" alt="Środowisko Programisty - Mateusz Skorb" /></a></div>
+<div class="clear"> </div>
+
+<div id="bg_tlo">
+          <div id ="left">
+          <div id = "left_inner" style="border: solid #514131; border-width: 5px 0 0 0;">
+           <div id="post" class="prepend-1 span-13">
+<h1>Odpowiedzi laboratorium 4</h1>
+
+<h2>Zadanie 1</h2>
+
+<p>Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie małe litery na duże.</p>
+
+<pre>
+Dla poczatkujacych:
+
+[mskorb@localhost sp]$ ls
+tekst1.txt  tekst2.txt  tekst3.txt
+[mskorb@localhost sp]$ ls | tr a-z A-Z
+TEKST1.TXT
+TEKST2.TXT
+TEKST3.TXT
+
+[mskorb@localhost sp]$ ls | tr a-zą A-ZĄ
+
+</pre>
+
+
+
+
+<pre>
+Drugie rozwiazanie:
+
+[mskorb@localhost sp]$ ls | tr '[:lower:]' '[:upper:]' 
+TEKST1.TXT
+TEKST2.TXT
+TEKST3.TXT
+</pre>
+
+
+<h2>Zadanie 2</h2>
+
+<p>Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich rozmiar i nazwę.</p>
+
+<pre>
+[mskorb@localhost sp]$ ls -l | cut -b 1-10,28-33,48-
+</pre>
+
+
+<h2>Zadanie 3</h2>
+
+<p>Wyświetl listę plików w aktualnym katalogu, posortowaną według rozmiaru pliku.</p>
+
+<pre>
+[mskorb@localhost sp]$ ls --sort=size -l
+razem 8
+-rw-r--r-- 1 mskorb studinf 19 10-29 18:28 tekst3.txt
+-rw-r--r-- 1 mskorb studinf  3 10-29 18:26 tekst2.txt
+-rw-r--r-- 1 mskorb studinf  0 10-29 18:25 tekst1.txt
+
+Wariant skrótowy:
+[mskorb@localhost sp]$ ls -s -l
+</pre>
+
+
+<h2>Zadanie 4</h2>
+
+<p>Wyświetl zawartość pliku /etc/passwd posortowaną według numerów UID w kolejności od największego do najmniejszego.
+ <pre>
+[mskorb@localhost]$ cat /etc/passwd/ | sort --reverse --general-numeric-sort --key 3
+</pre></p>
+
+<h2>Zadanie 5</h2>
+
+<p>Wyświetl zawartość pliku /etc/passwd posortowaną najpierw według numerów GID w kolejności od największego do najmniejszego, a następnie UID.</p>
+
+<pre>
+[mskorb@localhost]$ cat /etc/passwd/ | sort --general-numeric-sort --key 4,3 --reverse
+ </pre>
+
+
+<h2>Zadanie 6</h2>
+
+<p>Podaj liczbę plików każdego użytkownika.</p>
+
+<pre>
+Na sigmie: brak uprawnien
+prosta wersja: domowa
+</pre>
+
+
+<h2>Zadanie 7</h2>
+
+<p>Sporządź statystykę praw dostępu (dla każdego z praw dostępu podaj ile razy zostało ono przydzielone).
+ls -l
+ile jest r ile w ile x</p>
+
+<p> <pre>
+[mskorb@localhost$ find -printf "%m\n" | sort | uniq -c
+ </pre></p>
+
+<h2>Zadanie 8</h2>
+
+<p>Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych poleceń?</p>
+
+<pre>
+ls -l > lsout.txt                          #  1
+</pre>
+
+
+<p>Zapisanie do pliku  lsout.txt szczególowej listy plików z aktualnego katalogu.</p>
+
+<pre>
+ls -la >> lsout.txt                        #  2
+</pre>
+
+
+<p>Dopisanie do pliku  lsout.txt szczególowej listy plików, lacznie z plikami zaczynajacymi sie od "." (ukrytymi) z aktualnego katalogu.</p>
+
+<pre>
+ps >> psout.txt                            #  3
+</pre>
+
+
+<p>Dopisuje do pliku psout.txt opis biezacych procesow.</p>
+
+<pre>
+free -m >> ~/wynik                         #  4
+</pre>
+
+
+<p>Dopisanie do pliku znajdującego się w lokalizacji "~/wynik" informacji o wolnej i wykorzystanej pamieci podanej w megabajtach.</p>
+
+<pre>
+kill -1 1234 > killout.txt 2>killerr.txt   #  5
+</pre>
+
+
+<p> Zakonczenie procesu o id 1234 oraz przakazanie komunikatow informacyjnych do pliku killout.txt, natomiast bledy zapisz do pliku killerr.txt</p>
+
+<pre>
+kill -1 1234 > killout.txt 2>&1            #  6
+</pre>
+
+
+<p>Zakonczenie procesu o id 1234 komunikaty informacyjne zapisz do pliku "killout.txt" a bledy wypisz na ekran.</p>
+
+<pre>
+kill -1 1234 > /dev/null 2>&1              #  7
+</pre>
+
+
+<p>Zakonczenie procesu o id 1234 komunikaty informacyjne zapisz w lokalizacji "/dev/null" a bledy wypisz na ekran.</p>
+
+<pre>
+sort psout.txt > pssort.txt                #  8
+</pre>
+
+
+<p>Sortowanie procesow w pliku psout.txt i zapisanie wyniku w pliku pssort.txt</p>
+
+<pre>
+ps | sort > pssort.txt                     #  9
+</pre>
+
+
+<p>  Sortowanie procesow i zapisanie do pliku pssort.txt</p>
+
+<pre>
+cat lsout.txt | sort > lssort.txt          # 10
+</pre>
+
+
+<p>Wypisanie pliku lsout.txt posortowanie i zapisanie do pliku lssort.txt</p>
+
+<pre>
+who | sort | more                          # 11
+</pre>
+
+
+<p>Posortowanie listy zalogowanych uzytkownikow ze stronami.</p>
+
+<pre>
+who | sort | less                          # 12
+</pre>
+
+
+<p>Posortowanie listy zalogowanych uzytkownikow ze stronami.</p>
+
+</div>
+
+          </div>
+          </div>
+          
+          <div id ="right">
+          <div id = "right_inner" style="border: solid #a69d8f; border-width: 5px 0 0 0;">
+                <h4> Środowisko Programisty - Mateusz Skorb - Programming Environment </h4> <br />
+            <a href="../../../../"> - Str. główna</a><br />
+            <a href="../../../../../kolosp/"> - Luźne notatki, do nauki</a><br />
+           <br />
+           <h4> Przydatne odsyłacze: </h4>  <br />
+          <a href="http://sinatra.inf.ug.edu.pl/sp/" target="_blank" /> - Środowisko Programisty </a><br />
+          <a href="http://inf.ug.edu.pl/~hanna/md/index.html" target="_blank" /> - Matematyka Dyskretna (H.F.) </a><br />
+          <a href="http://inf.ug.edu.pl/~khorodec/mat_dysk/mat_dysk.html" target="_blank" /> - Matematyka Dyskretna (K.H.) </a><br />
+          <a href="https://inf.ug.edu.pl/~stefan/Dydaktyka/WstepDoProg/" target="_blank" /> - Wstęp do Programowania </a><br />
+          <a href="http://mat.ug.edu.pl/~andrzej/" target="_blank" /> - Wstęp do Matematyki </a><br />
+          
+              
+              </div>
+          </div>
+       
+    </div>
+<div id="footer"> <div id="footerinner"> Copyright 2009 by Mateusz Skorb <br / > <div style="font-size:.8em">based on jBlog</div> </div> </div>
+</div>
+</div>
+</body>
+</html>

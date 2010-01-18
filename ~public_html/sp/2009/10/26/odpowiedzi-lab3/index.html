@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Odpowiedzi laboratorium 3</title>
+   <meta name="author" content="Mateusz Skorb" />
+   <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/atom.xml" rel="alternate" 
+         title="Mateusz Skorb" type="application/atom+xml" />
+    
+   <link rel="stylesheet" href="../../../../css/style2.css" type="text/css" />
+   <link rel="stylesheet" href="../../../../css/syntax.css" type="text/css" />
+     
+<body>
+<div style="background-image:url(../../../../images/grad.jpg); background-repeat:repeat-x; background-position:top;">
+<div id="site">
+
+<div id="header1"><a href="../../../../"><img src="../../../../images/header1.gif" alt="Środowisko Programisty - Mateusz Skorb"/></a></div>
+<div id="logo"><a href="../../../../"><img src="../../../../images/logo.gif" alt="Środowisko Programisty - Mateusz Skorb" /></a></div>
+<div class="clear"> </div>
+
+<div id="bg_tlo">
+          <div id ="left">
+          <div id = "left_inner" style="border: solid #514131; border-width: 5px 0 0 0;">
+           <div id="post" class="prepend-1 span-13">
+<h1>Odpowiedzi laboratorium 3</h1>
+
+<h2>Zadanie 1</h2>
+
+<p>Wyświetl plik /etc/passwd z podziałem na strony
+przyjmując, że strona na 5 linii tekstu.</p>
+
+<pre>
+[mskorb@sigma etc]$ pg -5 /etc/passwd
+</pre>
+
+
+<h2>Zadanie 2</h2>
+
+<p>Korzystając z polecenia cat utwórz plik
+tekst3.txt, który będzie składał się z
+zawartości pliku tekst1.txt, ciągu znaków
+podanego ze standardowego wejścia (klawiatury) i
+pliku tekst2.txt.</p>
+
+<pre>
+
+[mskorb@sigma sp]$ cat > tekst1.txt
+t1
+[mskorb@sigma sp]$ ls
+tekst1.txt
+[mskorb@sigma sp]$ cat > tekst2.txt
+t2
+[mskorb@sigma sp]$ cat tekst1.txt > tekst3.txt
+[mskorb@sigma sp]$ ls
+tekst1.txt  tekst2.txt  tekst3.txt
+[mskorb@sigma sp]$ cat >> tekst3.txt
+tekst z klawiatury
+[mskorb@sigma sp]$ cat tekst3.txt
+t1
+tekst z klawiatury
+t2
+</pre>
+
+
+<h2>Zadanie 3</h2>
+
+<p>Wyświetl po 5 pierwszych linii wszystkich plików
+w swoim katalogu domowym w taki sposób, aby nie
+były wyświetlane ich nazwy.</p>
+
+<pre>
+[mskorb@sigma sp]$ head --quiet --lines 5 *
+
+wariant skrótowy:
+[mskorb@sigma sp]$ head -qn 5 *
+</pre>
+
+
+<h2>Zadanie 4</h2>
+
+<p>Wyświetl linie o numerach 3, 4 i 5 z pliku
+/etc/passwd.</p>
+
+<pre>
+[mskorb@sigma ~]$ nl /etc/passwd > passwd
+[mskorb@sigma ~]$ ls
+[mskorb@sigma ~]$ head -n 5 passwd  | tail -n 3
+</pre>
+
+
+<h2>Zadanie 5</h2>
+
+<p>Wyświetl linie o numerach 7, 6 i 5 od końca
+pliku /etc/passwd.</p>
+
+<pre>
+[mskorb@sigma ~]$ cat /etc/passwd | sed -n 3,5p
+daemon:x:2:2:daemon:/sbin:/bin/false
+adm:x:3:4:adm:/var/account:/bin/false
+lp:x:4:7:lp:/var/spool/lpd:/bin/false
+
+</pre>
+
+
+<h2>Zadanie 6</h2>
+
+<p>Wyświetl zawartość pliku /etc/passwd w jednej
+linii.</p>
+
+<pre>
+[mskorb@sigma sp]$ cat /etc/passwd  | tr --delete "\n"
+
+wariant skrótowy:
+[mskorb@sigma sp]$ cat /etc/passwd  | tr -d "\n"
+</pre>
+
+
+<h2>Zadanie 7</h2>
+
+<p>Za pomocą filtru tr wykonaj modyfikację pliku
+plik.txt, polegającą na umieszczeniu każdego
+słowa w osobnej linii.</p>
+
+<pre>
+
+</pre>
+
+
+<h2>Zadanie 8</h2>
+
+<p>Zlicz wszystkie pliki znajdujące się w katalogu
+/etc i jego podkatalogach</p>
+
+<pre>
+[mskorb@sigma ~]$ find /etc/ -type f 2> errors | wc -l
+831
+
+</pre>
+
+
+<h2>Zadanie 9</h2>
+
+<p>Napisać polecenie zliczające ilość znaków z
+pierwszych trzech linii pliku /etc/passwd.</p>
+
+<pre>
+[mskorb@sigma ~]$ head /etc/passwd -n 3 | wc -c
+99
+</pre>
+
+
+</div>
+
+          </div>
+          </div>
+          
+          <div id ="right">
+          <div id = "right_inner" style="border: solid #a69d8f; border-width: 5px 0 0 0;">
+                <h4> Środowisko Programisty - Mateusz Skorb - Programming Environment </h4> <br />
+            <a href="../../../../"> - Str. główna</a><br />
+            <a href="../../../../../kolosp/"> - Luźne notatki, do nauki</a><br />
+           <br />
+           <h4> Przydatne odsyłacze: </h4>  <br />
+          <a href="http://sinatra.inf.ug.edu.pl/sp/" target="_blank" /> - Środowisko Programisty </a><br />
+          <a href="http://inf.ug.edu.pl/~hanna/md/index.html" target="_blank" /> - Matematyka Dyskretna (H.F.) </a><br />
+          <a href="http://inf.ug.edu.pl/~khorodec/mat_dysk/mat_dysk.html" target="_blank" /> - Matematyka Dyskretna (K.H.) </a><br />
+          <a href="https://inf.ug.edu.pl/~stefan/Dydaktyka/WstepDoProg/" target="_blank" /> - Wstęp do Programowania </a><br />
+          <a href="http://mat.ug.edu.pl/~andrzej/" target="_blank" /> - Wstęp do Matematyki </a><br />
+          
+              
+              </div>
+          </div>
+       
+    </div>
+<div id="footer"> <div id="footerinner"> Copyright 2009 by Mateusz Skorb <br / > <div style="font-size:.8em">based on jBlog</div> </div> </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+* {margin: 0; padding: 0;}
+
+body {
+   margin: 1px 0;
+   background: #000 url(bg.jpg);
+   font-size: 0.75em;
+   font-weight: normal;
+   font-family: Tahoma,arial,sans-serif;
+   text-align: justifity;
+   color: #fff;
+}
+
+#site {
+width:800px;
+margin: auto;
+
+}
+
+#header1 {
+width:800px;
+height:21px;
+margin: center;
+clear:both;
+}
+
+#logo {
+width:800px;
+height:194px;
+margin: center;
+clear:both;
+}
+
+#header2 {
+width:800px;
+height:13px;
+margin: center;
+clear:both;
+}
+
+#logo3 {
+width:291px;
+height:76px;
+float:left;
+background: url(logo3.jpg);
+margin: center;
+}
+
+#header2 {
+width:800px;
+height:15px;
+margin: center;
+}
+
+#line1 {
+width:800px;
+height:7px;
+margin: center;
+float: left;
+}
+
+#left1 {
+width:4px;
+height:649px;
+margin: center;
+float: left;
+
+}
+
+#buttony {
+float: left;
+margin-top:15px;
+margin-right:18px;
+
+}
+
+#button0 {
+width:157px;
+height:34px;
+}
+
+#button1 {
+width:157px;
+height:36px;
+}
+
+#button2 {
+width:157px;
+height:38px;
+}
+
+#button3 {
+width:157px;
+height:38px;
+}
+
+#button4 {
+width:157px;
+height:38px;
+}
+
+#button5 {
+width:157px;
+height:56px;
+}
+
+#button6 {
+width:157px;
+height:44px;
+}
+
+#button7 {
+background: url(button7.jpg);
+width:157px;
+height:56px;
+}
+
+#button8 {
+background: url(button8.jpg);
+width:157px;
+height:38px;
+}
+
+#center1 {
+width:600px;
+height:649px;
+float: left;
+background: #6aa0ce url(center1.jpg);
+repeat-x;
+margin-top:15px;
+}
+
+#prawa {
+float: left;
+}
+
+#center2 {
+width:66px;
+height:55px;
+margin: center;
+float: left;
+margin-left:10px;
+margin-top:15px;
+}
+
+#texttitle{
+text-align: justifity;
+font-size: 1.00em;
+font-weight: bold;
+margin: auto;
+color: #6aa0ce;
+
+}
+
+#texttitle h1{
+      font-size: 18px;
+      color: #6aa0ce;
+      text-decoration: none; 
+
+}
+
+#title {
+width:500px;
+height:55px;
+float: left;
+margin-top:15px;
+background: url(center3.jpg);
+}
+
+#textcontent{
+text-align: justifity;
+font-size: 1.30em;
+margin: auto;
+color: #6aa0ce;
+
+}
+
+#content {
+width:580px;
+height:579px;
+margin: center;
+float: left;
+background: url(content.jpg);
+margin-left:15px;
+margin-right:15px;
+}
+
+
+#bg_tlo2 {
+width:800px;
+height:770px;;
+background: #6aa0ce url(bg_2.jpg);
+repeat-x;
+border: 1px;
+}
+
+#foot1 {
+width:260px;
+height:42px;
+margin: auto;
+float: left;
+}
+
+#foot2 {
+width:540px;
+height:42px;
+background: url(foot2.jpg);
+margin: auto;
+float: left;
+}
+
+#footer {
+font-size: 1.3em;
+}
+
+hr {
+color: #fff;
+}
+
+A:link {text-decoration: none; color:#1b53a6;}
+A:visited {text-decoration: none; color:#1b53a6;}
+A:active {text-decoration: none; color:#555555;}
+A:hover {text-decoration: underline; color: #8f8f8f;}
+
+img {
+border: 0px;
+}

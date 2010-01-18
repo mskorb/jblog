@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
+   <title>Jekyll-Blog HOWTO</title>
    <meta name="author" content="Mateusz Skorb" />
    <link href="http://sigma.inf.ug.edu.pl/~mskorb/sp/atom.xml" rel="alternate" 
          title="Mateusz Skorb" type="application/atom+xml" />
@@ -20,18 +20,76 @@
 
 <div id="bg_tlo">
           <div id ="left">
-          <div id = "left_inner">
-           {{ content }}
+          <div id = "left_inner" style="border: solid #514131; border-width: 5px 0 0 0;">
+           <div id="post" class="prepend-1 span-13">
+
+
+<blockquote>
+<img src="../../../../images/alan-perlis.gif" alt="[Alan Perlis]" />
+<p>
+  Dealing with failure is easy: Work hard to improve. Success is also
+  easy to handle: You've solved the wrong problem. Work hard to improve.
+</p>
+<p class="author">— Alan Perlis</p>
+</blockquote>
+
+
+<h1>Jekyll-Blog HOWTO</h1>
+
+<h2>Markdown</h2>
+
+<p>Posty wpisujemy używając notacji Markdown.
+Notacja jest opisana przez autora Johna Grubera
+w witrynie <a href="http://daringfireball.net/projects/markdown/syntax">Daring Fireball</a>.</p>
+
+<h2>Kolorowanie kodu</h2>
+
+<p>Kod wpisujemy tak:</p>
+
+<pre>
+&#123;% highlight ruby %&#125;
+def foo
+  puts 'foo'
+end
+&#123;% endhighlight %&#125;
+</pre>
+
+
+<p>A tak to wygląda po podkolorowaniu:</p>
+
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">foo</span>
+  <span class="nb">puts</span> <span class="s1">&#39;foo&#39;</span>
+<span class="k">end</span>
+</pre>
+</div>
+
+
+<p>Kod jest kolorowany przez narzędzie
+<a href="http://pygments.org/docs/cmdline/">pygmentize</a>.
+Wykonanie polecenia:</p>
+
+<pre><code>pygmentize -L lexers
+...
+* css+erb, css+ruby:
+* erb:
+* js+erb, javascript+erb, js+ruby, javascript+ruby:
+* rhtml, html+erb, html+ruby:
+* xml+erb, xml+ruby
+...
+</code></pre>
+
+<p>wypisuje listę obsługiwanych języków programowania.</p>
+
+</div>
+
           </div>
           </div>
           
           <div id ="right">
-          <div id = "right_inner">
+          <div id = "right_inner" style="border: solid #a69d8f; border-width: 5px 0 0 0;">
                 <h4> Środowisko Programisty - Mateusz Skorb - Programming Environment </h4> <br />
             <a href="../../../../"> - Str. główna</a><br />
             <a href="../../../../../kolosp/"> - Luźne notatki, do nauki</a><br />
-            <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/"> - UNIX tutorial dla początkujących (ENG)</a>
-           <br />
            <br />
            <h4> Przydatne odsyłacze: </h4>  <br />
           <a href="http://sinatra.inf.ug.edu.pl/sp/" target="_blank" /> - Środowisko Programisty </a><br />

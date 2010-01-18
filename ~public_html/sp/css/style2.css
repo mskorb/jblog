@@ -31,7 +31,7 @@ clear:both;
 
 #logo {
 width:800px;
-height:192px;
+height:194px;
 float:left;
 margin: center;
 }
@@ -68,7 +68,7 @@ padding 10 px;
 margin: 5px 17px 5px 15px;
 padding: 5px;
 background:#d9d4c2;
-border: solid #958867; border-width: 5px 0 0 0;
+border: solid #c7c4b1; border-width: 1px;
 
 }
 
@@ -82,7 +82,7 @@ float: left;
 margin: 5px 11px 5px -1px;
 padding: 5px;
 background:#e3e0d1;
-border: solid #6f5f40; border-width: 5px 0 0 0;
+border: solid #c7c4b1; border-width: 1px;
 
 
 
@@ -143,17 +143,6 @@ font-size:.9em;
 color:#fff;
 
 }
-.long{
-background:#fff;
-height:auto;
-width: 500px;
-font-family: "Courier New", Courier, monospace; 
-font-size:1.1em;
-color:#000;
-border: solid #60564e; border-width: 0 0 0 3px;
-padding:3px;
-margin:4px 2px 2px 2px; 
-}
 
 .clear{
 clear:both;
@@ -163,13 +152,8 @@ hr {
 color: #fff;
 }
 
-li{
-margin-left: 15px;
 
-}
-
-
-A:link {text-decoration: underline; color:rgb(67,67,67);}
+A:link {text-decoration: underline; color:rgb(80,0,0);}
 A:visited {text-decoration: underline; color:rgb(96,96,96);}
 A:active {text-decoration: none; color:rgb(80,0,0);}
 A:hover {text-decoration: underline; color: rgb(0,0,0);}
@@ -177,4 +161,3 @@ A:hover {text-decoration: underline; color: rgb(0,0,0);}
 img {
 border: 0px;
 }
-                                  
